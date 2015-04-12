@@ -8,9 +8,5 @@ power$Datetime <- strptime(power$Datetime, "%d/%m/%Y|%H:%M:%S")
 set <- subset(power, power$Datetime$year == 107 & power$Datetime$mon == 1 & (power$Datetime$mday == 1 | power$Datetime$mday == 2))
 
 png('plot3.png')
-plot(set$Datetime, set$Sub_metering_1, type = "n", xlab = "", ylab = "Energy sub meterting")
-lines(set$Datetime, set$Sub_metering_1, col = "black")
-lines(set$Datetime, set$Sub_metering_2, col = "red")
-lines(set$Datetime, set$Sub_metering_3, col = "blue")
-legend("topright", c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"), col = c('black', 'red', 'blue'), lty = c(1,1))
+
 dev.off()
